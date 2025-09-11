@@ -1,0 +1,22 @@
+.kingdirt .board {
+  display: inline-block;
+  margin-top: 20px;
+}
+.kingdirt .row {
+  display: flex;
+}
+.kingdirt .cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.kingdirt .cell.blocked {
+  background: #999;
+}
+.kingdirt .cell.p1 { background: #4caf50; }
+.kingdirt .cell.p2 { background: #f44336; }

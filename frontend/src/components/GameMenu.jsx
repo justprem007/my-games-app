@@ -13,6 +13,9 @@ export default function GameMenu() {
         <Link to="/fourinarow">
           <button style={{ margin: "10px" }}>Play Four in a Row</button>
         </Link>
+        <Link to="/kingdirt">
+          <button className="menu-btn">Play King Dirt</button>
+        </Link>
       </div>
     </div>
   );
