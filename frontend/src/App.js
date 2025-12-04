@@ -4,6 +4,9 @@ import GameMenu from "./components/GameMenu";
 import TicTacToe from "./components/TicTacToe";
 import FourInARow from "./components/FourInARow";
 import KingDirt from "./components/KingDirt";
+import StoneExpansion from "./components/StoneExpansion";
+
+
 
 export default function App() {
   return (
@@ -13,6 +16,7 @@ export default function App() {
         <Route path="/tictactoe" element={<TicTacToe />} />
         <Route path="/fourinarow" element={<FourInARow />} />
         <Route path="/kingdirt" element={<KingDirt />} />
+        <Route path="/stoneexpansion" element={<StoneExpansion />} />
       </Routes>
     </Router>
   );

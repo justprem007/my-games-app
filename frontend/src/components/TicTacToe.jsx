@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./TicTacToe.css";
 import { resolveBidding } from "./biddingEngine";
@@ -158,6 +159,7 @@ export default function TicTacToe() {
       {/* LEFT SIDE — INSTRUCTIONS */}
       <div className="ttt-left">
         <div className="ttt-instructions">
+        <Link to="/">← Back</Link>
           {mode === "normal" ? (
             <>
               <h3>How to Play (Normal Mode)</h3>

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./KingDirt.css"; // same styling as your game
 import { resolveBidding } from "./biddingEngine";
 
-export default function Connect4Game() {
+export default function FourInARow() {
   const location = useLocation();
   const { mode, currencyP1, currencyP2, markerHolder } =
     location.state || {

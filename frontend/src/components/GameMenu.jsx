@@ -110,6 +110,21 @@ export default function GameMenu() {
         }}>
           <button>Play Four In A Row</button>
         </Link>
+
+        <Link 
+        to="/stoneexpansion"
+        state={{
+          mode,
+          currencyP1,
+          currencyP2,
+          markerHolder
+        }}
+      >
+        <button>Play Stone Expansion</button>
+      </Link>
+
+
+
       </div>
     </div>
   );

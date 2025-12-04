@@ -1,0 +1,50 @@
+.stone-expansion-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.board {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #555;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cell.selected {
+  background: #c6e0ff;
+}
+
+.stone {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.stone.black {
+  background: black;
+}
+
+.stone.white {
+  background: white;
+  border: 2px solid #333;
+}
+
+button {
+  margin-top: 15px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+}
