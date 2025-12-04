@@ -95,12 +95,19 @@ export default function GameMenu() {
           currencyP2,
           markerHolder
         }}
-      >
-        <button>Play King Dirt</button>
-      </Link>
+        >
+          <button>Play King Dirt</button>
+        </Link>
 
 
-        <Link to="/fourinarow">
+        <Link 
+        to="/fourinarow"
+         state={{
+          mode,
+          currencyP1,
+          currencyP2,
+          markerHolder
+        }}>
           <button>Play Four In A Row</button>
         </Link>
       </div>

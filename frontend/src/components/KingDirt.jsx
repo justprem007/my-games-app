@@ -385,13 +385,28 @@ export default function KingDirt() {
           </>
         )}
 
-        <h3>How to Play</h3>
-        <ul>
-          <li>Each player places one king.</li>
-          <li>Kings move 1 square; leaving a square blocks it.</li>
-          <li>No legal move → you lose.</li>
-          <li>Bidding mode: each action is won via bids.</li>
-        </ul>
+        {mode === "normal" ? (
+            <>
+              <h3>How to Play (Normal Mode)</h3>
+              <ul>
+                <li>Each player places one king.</li>
+                <li>Kings move 1 square; leaving a square blocks it.</li>
+                <li>No legal move → you lose.</li>
+              </ul>
+            </>
+          ) : (
+            <>
+              <h3>How to Play (Bidding Mode)</h3>
+              <ul>
+                <li>Both players submit bids each turn.</li>
+                <li>Higher bid wins and pays their bid to the opponent.</li>
+                <li>If marker is used or bids tie → marker transfers.</li>
+                <li>Winner of the bid places/moves their king.</li>
+                <li>No legal move remmaining→ you lose.</li>
+                <li>If only one king is in play and he has no moves remaining, if all the squares are fulled, he wins else he loses</li>
+              </ul>
+            </>
+          )}
       </div>
 
       {/* CENTER BOARD */}
