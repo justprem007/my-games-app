@@ -45,12 +45,20 @@
 }
 
 .kd-cell.p1 {
-  background: #ffecec;
+  color: red;
+  font-size: 2rem; /* bigger circle */
 }
 
 .kd-cell.p2 {
-  background: #ecf2ff;
+  color: blue;
+  font-size: 2rem; /* bigger circle */
 }
+
+/* Optional: highlight the selected cell */
+.kd-cell.selected {
+  border: 2px solid gold;
+}
+
 
 .kd-cell.selected {
   outline: 3px solid rgba(37, 99, 235, 0.3);

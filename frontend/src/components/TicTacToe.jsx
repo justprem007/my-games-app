@@ -162,7 +162,7 @@ export default function TicTacToe() {
         <Link to="/">← Back</Link>
           {mode === "normal" ? (
             <>
-              <h3>How to Play (Normal Mode)</h3>
+              <h3>How to Play (Normal Play)</h3>
               <ul>
                 <li>Players take turns placing on empty tiles.</li>
                 <li>First to complete a row, column or diagonal wins.</li>
@@ -171,7 +171,7 @@ export default function TicTacToe() {
             </>
           ) : (
             <>
-              <h3>How to Play (Bidding Mode)</h3>
+              <h3>How to Play (Bidding Play)</h3>
               <ul>
                 <li>Both players submit bids each turn.</li>
                 <li>Higher bid wins and pays their bid to the opponent.</li>
@@ -186,7 +186,7 @@ export default function TicTacToe() {
 
       {/* CENTER — BOARD */}
       <div className="ttt-center">
-        <h1>Tic Tac Toe ({mode === "bidding" ? "Bidding Mode" : "Normal Mode"})</h1>
+        <h1>Tic Tac Toe ({mode === "bidding" ? "Bidding Play" : "Normal Play"})</h1>
 
         {mode === "bidding" && (
           <div className="bidding-info">

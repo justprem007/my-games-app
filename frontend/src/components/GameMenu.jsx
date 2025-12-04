@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./GameMenu.css";
 
 export default function GameMenu() {
   const [mode, setMode] = useState("normal"); // normal | bidding
@@ -29,39 +30,91 @@ export default function GameMenu() {
   return (
     <div className="container">
 
-      <h1>My Games</h1>
+      <h1>Combinatorial Games</h1>
 
-      {/* MODE SWITCH */}
-      <div style={{ marginBottom: "20px" }}>
-        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
-          Mode: {mode === "normal" ? "Normal" : "Bidding"}
-        </label>
+      <div
+  style={{
+    marginBottom: "20px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "20px",
+  }}
+>
+  <label
+    style={{
+      fontWeight: "bold",
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+    }}
+  >
+    Normal Play
+    <span className="info-tooltip">
+      ℹ️
+      <span className="tooltip-text">
+        Players take turns normally without any bidding.
+      </span>
+    </span>
+  </label>
 
-        <label className="switch">
-          <input type="checkbox" onChange={handleToggle} checked={mode === "bidding"} />
-          <span className="slider round"></span>
-        </label>
-      </div>
+  <label className="switch">
+    <input
+      type="checkbox"
+      onChange={handleToggle}
+      checked={mode === "bidding"}
+    />
+    <span className="slider round"></span>
+  </label>
+
+  <label
+    style={{
+      fontWeight: "bold",
+      display: "flex",
+      alignItems: "center",
+      gap: "5px",
+    }}
+  >
+    Bidding Play
+    <span className="info-tooltip">
+      ℹ️
+      <span className="tooltip-text">
+        Each turn, players submit a bid to decide who moves
+        next. Ties are resolved using a tie breaking marker. Bids are deducted from your currency.
+      </span>
+    </span>
+  </label>
+</div>
+
+
 
       {/* POPUP FOR BIDDING MODE SETTINGS */}
       {showConfig && (
         <div className="modal">
           <div className="modal-content">
-            <h2>Bidding Mode Setup</h2>
+            <h2>Bidding Play Setup</h2>
 
             <label>Initial Currency – Player 1:</label>
             <input
-              type="number"
+             type="number"
+              min="0"
               value={currencyP1}
-              onChange={(e) => setCurrencyP1(Number(e.target.value))}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                setCurrencyP1(val < 0 ? 0 : val);
+              }}
             />
 
-            <label>Initial Currency – Player 2:</label>
             <input
               type="number"
+              min="0"
               value={currencyP2}
-              onChange={(e) => setCurrencyP2(Number(e.target.value))}
+              onChange={(e) => {
+                const val = Number(e.target.value);
+                setCurrencyP2(val < 0 ? 0 : val);
+              }}
             />
+
 
             <label>Who holds the tie-breaking marker?</label>
             <select value={markerHolder} onChange={(e) => setMarkerHolder(e.target.value)}>
@@ -126,6 +179,21 @@ export default function GameMenu() {
 
 
       </div>
+      <div
+          style={{
+            marginTop: "30px",
+            fontSize: "1.5 rem",
+            color: "#666",
+            textAlign: "center",
+          }}
+        >
+          <div style={{ fontWeight: "bold", marginBottom: "6px",fontSize: "4 rem"}}>Credits :</div>
+          <div>Veeresh S Kambalyal (23B1309), B.Tech in Electrical Engineering, IIT Bombay</div>
+          <div>Dr. Prem Kant (2), Ph.D in Combinatorial Game Theory, IIT Bombay</div>
+        </div>
+
+
     </div>
+    
   );
 }

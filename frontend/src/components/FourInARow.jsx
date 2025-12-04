@@ -242,30 +242,63 @@ export default function FourInARow() {
 
         {mode === "normal" ? (
   <>
-    <h3>How to Play (Normal Mode)</h3>
+    <h3>How to Play (Normal Play)</h3>
     <ul>
-      <li>Players take turns dropping a disc into any column.</li>
-      <li>The disc falls to the lowest empty slot in that column.</li>
-      <li>First player to connect 4 discs in a row wins.</li>
-      <li>Rows can be horizontal, vertical, or diagonal.</li>
-      <li>If the board fills with no winner, the game ends in a draw.</li>
+      <li>
+        (🔴 Player 1 / 🔵 Player 2) 
+      </li>
+      <li>
+        Players take turns dropping a disc into any column.
+      </li>
+      <li>
+        The disc falls to the lowest empty slot in that column.
+      </li>
+      <li>
+        First player to connect 4 discs in a row wins.
+      </li>
+      <li>
+        Rows can be horizontal, vertical, or diagonal.
+      </li>
+      <li>
+        If the board fills with no winner, the game ends in a draw.
+      </li>
     </ul>
   </>
 ) : (
   <>
-    <h3>How to Play (Bidding Mode)</h3>
+    <h3>How to Play (Bidding Play)</h3>
     <ul>
-      <li>Each turn, both players secretly choose a bid.</li>
-      <li>Higher bid wins the right to place the next disc.</li>
-      <li>The winner pays their bid amount to the opponent.</li>
-      <li>If bids tie → the advantage token switches sides.</li>
-      <li>The player with the advantage wins ties and places a disc.</li>
-      <li>Winner of the bid chooses any column to drop their disc into.</li>
-      <li>First to connect 4 discs in a row wins (horizontal, vertical, diagonal).</li>
-      <li>If the board fills with no winner, the game ends in a draw.</li>
+      <li>
+        (🔴 Player 1 / 🔵 Player 2) 
+      </li>
+      <li>
+        Each turn, both players secretly choose a bid.
+      </li>
+      <li>
+        Higher bid wins the right to place the next disc.
+      </li>
+      <li>
+        The winner pays their bid amount to the opponent.
+      </li>
+      <li>
+        If bids tie → the advantage token switches sides.
+      </li>
+      <li>
+        The player with the advantage wins ties and places a disc.
+      </li>
+      <li>
+        Winner of the bid chooses any column to drop their disc into.
+      </li>
+      <li>
+        First to connect 4 discs in a row wins (rows can be horizontal, vertical, or diagonal).
+      </li>
+      <li>
+        If the board fills with no winner, the game ends in a draw.
+      </li>
     </ul>
   </>
 )}
+
 
       </div>
 
