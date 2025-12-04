@@ -1,22 +1,68 @@
-.kingdirt .board {
-  display: inline-block;
-  margin-top: 20px;
-}
-.kingdirt .row {
+.kd-layout {
   display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 18px;
+  width: 100%;
 }
-.kingdirt .cell {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #333;
+
+.kd-left, .kd-right {
+  width: 260px;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.kd-center {
+  flex: 1;
+  text-align: center;
+}
+
+/* BOARD GRID */
+.kd-board {
+  display: grid;
+  gap: 4px;
+  margin-top: 18px;
+  justify-content: center;
+}
+
+.kd-cell {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #444;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-size: 22px;
+  background: #fff;
   cursor: pointer;
 }
-.kingdirt .cell.blocked {
-  background: #999;
+
+.kd-cell.blocked {
+  background: #000;
+  color: #fff;
 }
-.kingdirt .cell.p1 { background: #4caf50; }
-.kingdirt .cell.p2 { background: #f44336; }
+
+.kd-cell.p1 {
+  background: #ffecec;
+}
+
+.kd-cell.p2 {
+  background: #ecf2ff;
+}
+
+.kd-cell.selected {
+  outline: 3px solid rgba(37, 99, 235, 0.3);
+}
+
+.error {
+  color: #c00;
+  font-weight: bold;
+}
+
+.await-msg {
+  color: #b85900;
+  margin: 8px 0;
+  font-weight: 600;
+}

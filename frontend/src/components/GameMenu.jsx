@@ -87,9 +87,18 @@ export default function GameMenu() {
           <button>Play Tic Tac Toe</button>
         </Link>
 
-        <Link to="/kingdirt">
-          <button>Play King Dirt</button>
-        </Link>
+        <Link
+        to="/kingdirt"
+        state={{
+          mode,
+          currencyP1,
+          currencyP2,
+          markerHolder
+        }}
+      >
+        <button>Play King Dirt</button>
+      </Link>
+
 
         <Link to="/fourinarow">
           <button>Play Four In A Row</button>
