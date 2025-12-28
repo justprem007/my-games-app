@@ -189,7 +189,7 @@ export default function GameMenu() {
         >
           <div style={{ fontWeight: "bold", marginBottom: "6px",fontSize: "4 rem"}}>Credits :</div>
           <div>Veeresh S Kambalyal (23B1309), B.Tech in Electrical Engineering, IIT Bombay</div>
-          <div>Dr. Prem Kant (2), Ph.D in Combinatorial Game Theory, IIT Bombay</div>
+          <div>Dr. Prem Kant (194193001), Ph.D in Combinatorial Game Theory, IIT Bombay</div>
         </div>
 
 
