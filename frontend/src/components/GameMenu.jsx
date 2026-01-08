@@ -25,22 +25,24 @@ export default function GameMenu() {
   };
 
   const gameList = [
-    { name: "Tic Tac Toe", path: "/tictactoe" },
-    { name: "King Dirt", path: "/kingdirt" },
-    { name: "Four In A Row", path: "/fourinarow" },
-    { name: "Stone Expansion", path: "/stoneexpansion" },
+    { name: "Tic Tac Toe", path: "/tictactoe", icon: "⭕", id: "tictactoe" },
+    { name: "King Dirt", path: "/kingdirt", icon: "👑", id: "kingdirt" },
+    { name: "Four In A Row", path: "/fourinarow", icon: "🟣", id: "fourinarow" },
+    { name: "Stone Expansion", path: "/stoneexpansion", icon: "🌑", id: "stoneexpansion" },
   ];
 
   return (
     <div className="container">
       <h1>Combinatorial Games</h1>
 
-      {/* Mode Toggle Section */}
+      {/* Mode Toggle Section */
+        /* Note: Reduced bottom margin on container via CSS for tighter look */
+      }
       <div className="mode-toggle-container">
         <label className={`mode-label ${mode === 'normal' ? 'active' : ''}`}>
           Normal Play
           <span className="info-tooltip">
-            ℹ️
+            ℹ
             <span className="tooltip-text">
               Players take turns normally without any bidding.
             </span>
@@ -59,7 +61,7 @@ export default function GameMenu() {
         <label className={`mode-label ${mode === 'bidding' ? 'active' : ''}`}>
           Bidding Play
           <span className="info-tooltip">
-            ℹ️
+            ℹ
             <span className="tooltip-text">
               Each turn, players submit a bid to decide who moves
               next. Ties are resolved using a tie breaking marker. Bids are deducted from your currency.
@@ -68,7 +70,7 @@ export default function GameMenu() {
         </label>
       </div>
 
-      {/* Game Grid */}
+      {/* Game Grid - Horizontal Row */}
       <div className="game-grid">
         {gameList.map((game) => (
           <Link
@@ -80,8 +82,9 @@ export default function GameMenu() {
               currencyP2,
               markerHolder,
             }}
-            className="game-card"
+            className={`game-card ${game.id}`}
           >
+            <div className="icon">{game.icon}</div>
             <h3>{game.name}</h3>
           </Link>
         ))}
