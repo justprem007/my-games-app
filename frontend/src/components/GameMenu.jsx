@@ -22,81 +22,80 @@ export default function GameMenu() {
 
   const saveConfig = () => {
     setShowConfig(false);
-    // alert(
-    //   `Bidding mode configured:\nP1 = ${currencyP1}\nP2 = ${currencyP2}\nMarker = ${markerHolder}`
-    // );
   };
+
+  const gameList = [
+    { name: "Tic Tac Toe", path: "/tictactoe" },
+    { name: "King Dirt", path: "/kingdirt" },
+    { name: "Four In A Row", path: "/fourinarow" },
+    { name: "Stone Expansion", path: "/stoneexpansion" },
+  ];
 
   return (
     <div className="container">
-
       <h1>Combinatorial Games</h1>
 
-      <div
-  style={{
-    marginBottom: "20px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "20px",
-  }}
->
-  <label
-    style={{
-      fontWeight: "bold",
-      display: "flex",
-      alignItems: "center",
-      gap: "5px",
-    }}
-  >
-    Normal Play
-    <span className="info-tooltip">
-      ℹ️
-      <span className="tooltip-text">
-        Players take turns normally without any bidding.
-      </span>
-    </span>
-  </label>
+      {/* Mode Toggle Section */}
+      <div className="mode-toggle-container">
+        <label className={`mode-label ${mode === 'normal' ? 'active' : ''}`}>
+          Normal Play
+          <span className="info-tooltip">
+            ℹ️
+            <span className="tooltip-text">
+              Players take turns normally without any bidding.
+            </span>
+          </span>
+        </label>
 
-  <label className="switch">
-    <input
-      type="checkbox"
-      onChange={handleToggle}
-      checked={mode === "bidding"}
-    />
-    <span className="slider round"></span>
-  </label>
+        <label className="switch">
+          <input
+            type="checkbox"
+            onChange={handleToggle}
+            checked={mode === "bidding"}
+          />
+          <span className="slider round"></span>
+        </label>
 
-  <label
-    style={{
-      fontWeight: "bold",
-      display: "flex",
-      alignItems: "center",
-      gap: "5px",
-    }}
-  >
-    Bidding Play
-    <span className="info-tooltip">
-      ℹ️
-      <span className="tooltip-text">
-        Each turn, players submit a bid to decide who moves
-        next. Ties are resolved using a tie breaking marker. Bids are deducted from your currency.
-      </span>
-    </span>
-  </label>
-</div>
+        <label className={`mode-label ${mode === 'bidding' ? 'active' : ''}`}>
+          Bidding Play
+          <span className="info-tooltip">
+            ℹ️
+            <span className="tooltip-text">
+              Each turn, players submit a bid to decide who moves
+              next. Ties are resolved using a tie breaking marker. Bids are deducted from your currency.
+            </span>
+          </span>
+        </label>
+      </div>
 
-
+      {/* Game Grid */}
+      <div className="game-grid">
+        {gameList.map((game) => (
+          <Link
+            key={game.path}
+            to={game.path}
+            state={{
+              mode,
+              currencyP1,
+              currencyP2,
+              markerHolder,
+            }}
+            className="game-card"
+          >
+            <h3>{game.name}</h3>
+          </Link>
+        ))}
+      </div>
 
       {/* POPUP FOR BIDDING MODE SETTINGS */}
       {showConfig && (
         <div className="modal">
           <div className="modal-content">
-            <h2>Bidding Play Setup</h2>
+            <h2>Bidding Setup</h2>
 
             <label>Initial Currency – Player 1:</label>
             <input
-             type="number"
+              type="number"
               min="0"
               value={currencyP1}
               onChange={(e) => {
@@ -105,6 +104,7 @@ export default function GameMenu() {
               }}
             />
 
+            <label>Initial Currency – Player 2:</label>
             <input
               type="number"
               min="0"
@@ -115,85 +115,27 @@ export default function GameMenu() {
               }}
             />
 
-
             <label>Who holds the tie-breaking marker?</label>
             <select value={markerHolder} onChange={(e) => setMarkerHolder(e.target.value)}>
               <option value="P1">Player 1</option>
               <option value="P2">Player 2</option>
             </select>
 
-            <button onClick={saveConfig}>Save</button>
+            <div style={{ marginTop: '20px', textAlign: 'center' }}>
+              <button onClick={saveConfig}>Save Configuration</button>
+            </div>
           </div>
         </div>
       )}
 
-      <div>
-        <Link
-          to="/tictactoe"
-          state={{
-            mode,
-            currencyP1,
-            currencyP2,
-            markerHolder
-          }}
-        >
-          <button>Play Tic Tac Toe</button>
-        </Link>
-
-        <Link
-        to="/kingdirt"
-        state={{
-          mode,
-          currencyP1,
-          currencyP2,
-          markerHolder
-        }}
-        >
-          <button>Play King Dirt</button>
-        </Link>
-
-
-        <Link 
-        to="/fourinarow"
-         state={{
-          mode,
-          currencyP1,
-          currencyP2,
-          markerHolder
-        }}>
-          <button>Play Four In A Row</button>
-        </Link>
-
-        <Link 
-        to="/stoneexpansion"
-        state={{
-          mode,
-          currencyP1,
-          currencyP2,
-          markerHolder
-        }}
-      >
-        <button>Play Stone Expansion</button>
-      </Link>
-
-
-
-      </div>
-      <div
-          style={{
-            marginTop: "30px",
-            fontSize: "1.5 rem",
-            color: "#666",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ fontWeight: "bold", marginBottom: "6px",fontSize: "4 rem"}}>Credits :</div>
-          <div>Veeresh S Kambalyal (23B1309), B.Tech in Electrical Engineering, IIT Bombay</div>
-          <div>Dr. Prem Kant (194193001), Ph.D in Combinatorial Game Theory, IEOR, IIT Bombay</div>
+      {/* Credits */}
+      <div className="credits">
+        <strong>Credits</strong>
+        <div>Dr. Prem Kant (194193001), Ph.D in Combinatorial Game Theory, IEOR, IIT Bombay</div>
+        <div style={{ marginTop: '8px', fontSize: '0.9em', opacity: 0.8 }}>
+          I thank the other contributors for their help in game codes. Special thanks to Veeresh S Kambalyal (23B1309), B.Tech in Electrical Engineering, IIT Bombay.
         </div>
-
-
+      </div>
     </div>
-    
   );
 }
