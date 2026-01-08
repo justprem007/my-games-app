@@ -63,8 +63,11 @@ export default function GameMenu() {
           <span className="info-tooltip">
             ℹ
             <span className="tooltip-text">
-              Each turn, players submit a bid to decide who moves
-              next. Ties are resolved using a tie breaking marker. Bids are deducted from your currency.
+              At the start of each turn, both players submit a bid for the right to make the next move.
+              A bid may consist of coins alone, or coins together with the tie-breaking marker.
+              The player with the higher bid wins.
+              If both bids are equal, the player who holds the tie-breaking marker wins the bid by using it.
+              The winner transfers everything they bid (coins and, if included, the marker) to the other player and then makes a move in the game.
             </span>
           </span>
         </label>
