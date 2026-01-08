@@ -77,8 +77,14 @@
 }
 
 /* Indigo */
+/* Slate */
 .game-card.stoneexpansion:hover {
   background: #475569;
+}
+
+/* Red */
+.game-card.clobber:hover {
+  background: #ef4444;
 }
 
 /* Slate */
@@ -129,15 +135,19 @@
 
 .tooltip-text {
   visibility: hidden;
-  width: 260px;
+  width: 400px;
+  max-width: 90vw;
+  /* Prevent overflow on mobile */
   background-color: var(--text-main);
   color: white;
-  text-align: center;
+  text-align: left;
+  /* Better for reading paragraphs */
   border-radius: 8px;
-  padding: 12px;
+  padding: 16px;
   position: absolute;
   z-index: 10;
-  bottom: 150%;
+  bottom: 160%;
+  /* Lifted slightly higher */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
