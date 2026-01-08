@@ -29,6 +29,7 @@ export default function GameMenu() {
     { name: "King Dirt", path: "/kingdirt", icon: "👑", id: "kingdirt" },
     { name: "Four In A Row", path: "/fourinarow", icon: "🟣", id: "fourinarow" },
     { name: "Stone Expansion", path: "/stoneexpansion", icon: "🌑", id: "stoneexpansion" },
+    { name: "Clobber", path: "/clobber", icon: "⚔️", id: "clobber" },
   ];
 
   return (
