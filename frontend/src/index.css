@@ -1,29 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap');
 
 :root {
-  /* Modern Light Theme Palette */
-  --bg-app: #f0f2f5;
-  /* Soft Cloud Gray */
+  /* Soft Pastel Theme - Inspired by Notebook Aesthetics */
+  --bg-app: #FAF7F2;
+  /* Warm Cream */
   --bg-panel: #ffffff;
   /* Pure White */
-  --primary: #2563eb;
-  /* Royal Blue */
-  --primary-hover: #1d4ed8;
-  --secondary: #4f46e5;
-  /* Indigo */
-  --accent: #f97316;
-  /* Orange Highlights */
+  --primary: #6B9AC4;
+  /* Soft Blue */
+  --primary-hover: #5A89B3;
+  --secondary: #97B8A0;
+  /* Sage Green */
+  --accent: #D4A5A5;
+  /* Dusty Rose */
+  --navy: #2C3E50;
+  /* Deep Navy */
 
-  --text-main: #1e293b;
-  /* Slate 800 */
-  --text-muted: #64748b;
-  /* Slate 500 */
-  --border-light: #e2e8f0;
-  /* Slate 200 */
+  --text-main: #2C3E50;
+  /* Deep Navy for text */
+  --text-muted: #6B7F94;
+  /* Muted Blue-Gray */
+  --border-light: #E8E3DB;
+  /* Warm Light Border */
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(44, 62, 80, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(44, 62, 80, 0.1), 0 2px 4px -1px rgba(44, 62, 80, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(44, 62, 80, 0.1), 0 4px 6px -2px rgba(44, 62, 80, 0.05);
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -50,7 +52,7 @@ body {
   flex-direction: column;
   align-items: center;
   /* Subtle pattern or gradient if desired, keeping it clean for now */
-  background: linear-gradient(to bottom, #f0f2f5, #eef2ff);
+  background: linear-gradient(to bottom, #FAF7F2, #F5EFE6);
 }
 
 /* Typography */
