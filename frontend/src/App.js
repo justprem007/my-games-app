@@ -8,16 +8,24 @@ import StoneExpansion from "./components/StoneExpansion";
 
 
 
+import GameInfo from "./components/GameInfo";
+import Clobber from "./components/Clobber";
+
+
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<GameMenu />} />
-        <Route path="/tictactoe" element={<TicTacToe />} />
-        <Route path="/fourinarow" element={<FourInARow />} />
-        <Route path="/kingdirt" element={<KingDirt />} />
-        <Route path="/stoneexpansion" element={<StoneExpansion />} />
-      </Routes>
-    </Router>
+    <div className="app-background">
+      <Router>
+        <Routes>
+          <Route path="/" element={<GameMenu />} />
+          <Route path="/game-info" element={<GameInfo />} />
+          <Route path="/tictactoe" element={<TicTacToe />} />
+          <Route path="/fourinarow" element={<FourInARow />} />
+          <Route path="/kingdirt" element={<KingDirt />} />
+          <Route path="/stoneexpansion" element={<StoneExpansion />} />
+          <Route path="/clobber" element={<Clobber />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
