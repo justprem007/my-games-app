@@ -50,9 +50,9 @@
 /* Mode Selection Cards */
 .mode-cards-container {
   display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   margin-bottom: 40px;
   perspective: 1000px;
   animation: fadeIn 0.8s ease;
