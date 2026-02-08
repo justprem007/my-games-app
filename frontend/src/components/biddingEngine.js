@@ -42,8 +42,8 @@ export function resolveBidding({
   let markerUsed = false;
 
   // CASE A — marker-holder toggled "use marker"
-  // (Always consumes marker, regardless of win/loss)
-  if (useMarker) {
+  // (Only consumes marker if the marker holder actually wins the bid)
+  if (useMarker && winner === currentMarker) {
     markerUsed = true;
   }
 
